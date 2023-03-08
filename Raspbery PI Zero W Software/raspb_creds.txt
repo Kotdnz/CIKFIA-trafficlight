@@ -1,0 +1,10 @@
+pi
+at24zk
+
+WiFi_name: KartingSystemV1
+WiFi_passwd: 6jBwdfHrMgNvxe32JaMB
+IP: 172.20.20.1/24
+
+MQTT_user: point
+MQTT_passwd: mqtt
+MQTT_topic: cloud

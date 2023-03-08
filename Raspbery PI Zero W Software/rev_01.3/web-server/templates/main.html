@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+   <title>Управление светофором</title>
+   <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+   <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" ></script>
+</head>
+
+<body>
+   {% if lights["GREEN1"] == "ON" or lights["GREEN2"] == "ON" or lights["RED1"] == "ON" %}
+      <a href="/lights/PIT/on" class="btn btn-block btn-lg btn-default" role="button">Закончить заезд, все на PIT</a>
+   {% else %}
+      <a href="/lights/GREEN1/on" class="btn btn-block btn-lg btn-primary" role="button">Запуск заезда 10 минут</a>
+   {% endif %}
+
+   {% if lights["GREEN2"] == "ON" or lights["GREEN1"] == "ON" or lights["RED1"] == "ON" %}
+      <a href="/lights/PIT/on" class="btn btn-block btn-lg btn-default" role="button">Закончить заезд, все на PIT</a>
+   {% else %}
+      <a href="/lights/GREEN2/on" class="btn btn-block btn-lg btn-primary" role="button">Запуск заезда 15 минут</a>
+   {% endif %}
+
+   {% if lights["LAST"] == "ON" %}
+      <a href="/lights/LAST/off" class="btn btn-block btn-lg btn-default" role="button">Выключить на Последний круг</a>
+   {% else %}
+      <a href="/lights/LAST/on" class="btn btn-block btn-lg btn-primary" role="button">На последний круг</a>
+   {% endif %}
+
+   {% if lights["PIT"] == "ON" %}
+      <a href="/lights/PIT/off" class="btn btn-block btn-lg btn-default" role="button">Снять Go to PIT</a>
+   {% else %}
+      <a href="/lights/PIT/on" class="btn btn-block btn-lg btn-primary" role="button">Go to PIT</a>
+   {% endif %}
+
+   {% if lights["YELLOW"] == "ON" %}
+      <a href="/lights/YELOFF/on" class="btn btn-block btn-lg btn-default" role="button">Снять желтый флаг</a>
+   {% else %}
+      <a href="/lights/YELLOW/on" class="btn btn-block btn-lg btn-primary" role="button">Показать желтый флаг</a>
+   {% endif %}
+
+   {% if lights["RED"] == "ON" %}
+      <a href="/lights/RED/off" class="btn btn-block btn-lg btn-default" role="button">Снять красный флаг</a>
+   {% else %}
+      <a href="/lights/RED/on" class="btn btn-block btn-lg btn-primary" role="button">Показать красный флаг</a>
+   {% endif %}
+
+   <a href="/lights/OFF/on" class="btn btn-block btn-lg btn-primary" role="button">Сбросить всё</a>
+
+   {% if lights["GREEN2"] == "ON" or lights["GREEN1"] == "ON" or lights["RED1"] == "ON" %}
+      <a href="/lights/RED1/off" class="btn btn-block btn-lg btn-default" role="button">Дать старт</a>
+   {% else %}
+      <a href="/lights/RED1/on" class="btn btn-block btn-lg btn-primary" role="button">Инициироать стартовую процедуру CIK-FIA</a>
+   {% endif %}
+
+   <h6>Температура процессора {{piTemp}}<p>
+   CPU: {{cpu}}% RAM: {{ram}} DISK: {{disk}}</h6>
+
+</body>
+</html>
