@@ -2,13 +2,9 @@
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
  
-//const char* ssid = "KartingSystemV1";
-//const char* password =  "6jBwdfHrMgNvxe32JaMB";
-//const char* mqttServer = "172.20.20.1";
-
-const char* ssid = "My-home-TP-LINK";
-const char* password =  "kostya-secret";
-const char* mqttServer = "10.0.0.237";
+const char* ssid = "KartingSystemV1";
+const char* password =  "[passwd]";
+const char* mqttServer = "172.20.20.1";
 const int   mqttPort = 1883;
 const char* mqttUser = "point";
 const char* mqttPassword = "mqtt";
